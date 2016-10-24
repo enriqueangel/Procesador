@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/JDS88/Desktop/Procesador/ProgramCounter/ProcesadorMonociclo_TB_isim_beh.exe" -prj "C:/Users/JDS88/Desktop/Procesador/ProgramCounter/ProcesadorMonociclo_TB_beh.prj" "work.ProcesadorMonociclo_TB" 
