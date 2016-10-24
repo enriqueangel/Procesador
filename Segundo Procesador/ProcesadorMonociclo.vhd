@@ -92,7 +92,7 @@ Pc: Program_Counter
 				);
 				
 Sum: Sumador
-	port map( Op1 => x"00000004",
+	port map( Op1 => x"00000001",
 				 Op2 => In_PC,
 				 Salida => In_nPC
 			   );
