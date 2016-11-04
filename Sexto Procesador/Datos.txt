@@ -1,0 +1,19 @@
+mux-registerfile
+	-rd 6b
+	-rfdest 1b
+	-Ro7 6b
+
+mux-dm
+	-Pc 1b
+	-RFsource 1b
+	-data 32b
+	-adres 32b
+
+mux-Pc
+	-
+
+datamemory
+	-adres 32b
+	-rd
+	-data 32b
+	-wre-red - 1bit -> 1 write, 0 read
