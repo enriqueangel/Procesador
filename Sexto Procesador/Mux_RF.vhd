@@ -1,3 +1,4 @@
+LIBRARY ieee;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity Mux_RF is
@@ -16,9 +17,10 @@ begin
 	if(Rfdest = '0') then --Rd
 		mRd <= Rd;
 	else
-		mRd <= R07; --Registro O7
+		mRd <= Ro7; --Registro O7
 	end if;
 end process;
+
 
 end Behavioral;
 
