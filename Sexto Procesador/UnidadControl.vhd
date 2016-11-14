@@ -28,7 +28,7 @@ begin
 		Pcsource <= "01"; --salto disp 30
 		EscrituraRF <= '1';
 		Rfsource <= "10";
-		HabilitadorMemoria <= '1';
+		HabilitadorMemoria <= '0';
 		Rfdest <= '1';
 		EscrituraMem <= '0';
 		Aluop <= "111111";
@@ -48,7 +48,7 @@ begin
 						if(not(icc(2))='1') then -- not z
 							Pcsource <= "10"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -56,7 +56,7 @@ begin
 						else
 							Pcsource <= "11"; -- salto pc
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -66,7 +66,7 @@ begin
 						if(icc(2) = '1') then -- z
 							Pcsource <= "10"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -74,7 +74,7 @@ begin
 						else
 							Pcsource <= "11"; -- salto pc
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -84,7 +84,7 @@ begin
 						if((not(icc(2) or (icc(3) xor icc(1)))) = '1') then --Not (z or (n xor v))
 							Pcsource <= "10"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -92,7 +92,7 @@ begin
 						else
 							Pcsource <= "11"; -- salto pc
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -102,7 +102,7 @@ begin
 						if((icc(2) or (icc(3) xor icc(1))) = '1') then
 							Pcsource <= "10"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -110,7 +110,7 @@ begin
 						else
 							Pcsource <= "11"; -- salto pc
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -120,7 +120,7 @@ begin
 						 if((not(icc(3) xor icc(1))) = '1') then
 							Pcsource <= "10"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -128,7 +128,7 @@ begin
 						else
 							Pcsource <= "11"; -- salto pc
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -138,7 +138,7 @@ begin
 						if((icc(3) xor icc(1)) = '1') then
 							Pcsource <= "10"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -146,7 +146,7 @@ begin
 						else
 							Pcsource <= "11"; -- salto pc
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -156,7 +156,7 @@ begin
 						if((not(icc(0) or icc(2)))= '1') then
 							Pcsource <= "10"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -164,7 +164,7 @@ begin
 						else
 							Pcsource <= "10"; -- salto pc
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -174,7 +174,7 @@ begin
 						if((icc(0) or icc(2)) = '1') then
 							Pcsource <= "10"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -182,7 +182,7 @@ begin
 						else
 							Pcsource <= "11"; -- salto pc
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -192,7 +192,7 @@ begin
 						if((not(icc(0))) = '1') then
 							Pcsource <= "10"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -200,7 +200,7 @@ begin
 						else
 							Pcsource <= "11"; -- salto pc
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -210,7 +210,7 @@ begin
 						if(icc(0) = '1') then
 							Pcsource <= "10"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -218,7 +218,7 @@ begin
 						else
 							Pcsource <= "11"; -- salto pc
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -228,7 +228,7 @@ begin
 						if((not(icc(3))) = '1') then
 							Pcsource <= "10"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -236,7 +236,7 @@ begin
 						else
 							Pcsource <= "11"; -- salto pc
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -246,7 +246,7 @@ begin
 						if(icc(3) = '1') then
 							Pcsource <= "10"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -254,7 +254,7 @@ begin
 						else
 							Pcsource <= "11"; -- salto pc
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -264,7 +264,7 @@ begin
 						if((not(icc(1))) = '1') then
 							Pcsource <= "10"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -272,7 +272,7 @@ begin
 						else
 							Pcsource <= "11"; -- salto pc
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -282,7 +282,7 @@ begin
 						if(icc(1) = '1') then
 							Pcsource <= "10"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -290,7 +290,7 @@ begin
 						else
 							Pcsource <= "11"; -- salto pc
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -299,7 +299,7 @@ begin
 					when others =>
 							Pcsource <= "00"; -- salto disp 22
 							EscrituraRF <= '0';
-							HabilitadorMemoria <= '1';
+							HabilitadorMemoria <= '0';
 							Rfsource <= "00"; -- No importa este valor ya que no se permite escritura en el Register File
 							Rfdest <= '0'; 
 							EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -309,7 +309,7 @@ begin
 				if(op2 = "100") then
 					Pcsource <= "11"; -- salto pc
 					EscrituraRF <= '0';
-					HabilitadorMemoria <= '1';
+					HabilitadorMemoria <= '0';
 					Rfsource <= "01"; -- Resultado operacion
 					Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 					EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -322,7 +322,7 @@ begin
 					when "000000" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -330,7 +330,7 @@ begin
 					when "000100" =>
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -338,7 +338,7 @@ begin
 					when "000001" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -346,7 +346,7 @@ begin
 					when "000010" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -354,7 +354,7 @@ begin
 					when "000011" =>
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -362,7 +362,7 @@ begin
 					when "000111" =>
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -370,7 +370,7 @@ begin
 					when "000101" =>
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -378,7 +378,7 @@ begin
 					when "000110" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -386,7 +386,7 @@ begin
 					when "001000" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -394,7 +394,7 @@ begin
 					when "010000" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -402,7 +402,7 @@ begin
 					when "011000" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -410,7 +410,7 @@ begin
 					when "001100" =>
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -418,7 +418,7 @@ begin
 					when "010100" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -426,7 +426,7 @@ begin
 					when "011100" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -434,7 +434,7 @@ begin
 					when "010001" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -442,7 +442,7 @@ begin
 					when "010101" =>
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -450,7 +450,7 @@ begin
 					when "010010" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -458,7 +458,7 @@ begin
 					when "010110" =>
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -466,7 +466,7 @@ begin
 					when "010011" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -474,7 +474,7 @@ begin
 					when "010111" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -482,7 +482,7 @@ begin
 					when "100101" =>
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -490,7 +490,7 @@ begin
 					when "100110" =>
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -499,7 +499,7 @@ begin
 					when "111100" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -507,7 +507,7 @@ begin
 					when "111101" => 
 						Pcsource <= "11"; -- salto pc
 						EscrituraRF <= '1';
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -515,7 +515,7 @@ begin
 					when "111000" =>
 						Pcsource <= "00"; -- salto direccion calculado
 						EscrituraRF <= '1'; -- Se guarda en el Register File el valor del PC
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "10"; -- Valor de PC
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
@@ -523,7 +523,7 @@ begin
 					when others => 
 						Pcsource <= "11"; -- salto direccion calculado
 						EscrituraRF <= '0'; -- Se guarda en el Register File el valor del PC
-						HabilitadorMemoria <= '1';
+						HabilitadorMemoria <= '0';
 						Rfsource <= "01"; -- Resultado operacion
 						Rfdest <= '0'; -- No importa este Valor pues no se permitira escritura en el Register File
 						EscrituraMem <= '0'; -- El dato es leido de memoria pero no se toma en cuenta
